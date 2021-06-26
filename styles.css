@@ -1,27 +1,30 @@
 body {
   background-color: #85cdcb;
 }
+.card-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
 .card {
-  width: 700px;
+  max-width: 600px;
+  margin: auto;
   height: 500px;
   background: rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
-  position: relative;
-  left: 300px;
-  top: 50px;
 }
 h1 {
   position: relative;
-  top: 50px;
+  top: 70px;
   left: 100px;
   color: #e27d60;
+  margin-bottom: 0;
 }
 .searchBar {
   color: #6b9080;
   position: relative;
-  left: 400px;
+  left: 300px;
   top: 50px;
   width: 500px;
 }
@@ -40,9 +43,9 @@ h1 {
   color: #e8a87c;
 }
 .temperature {
-  font-size: 50px;
+  font-size: 70px;
   margin-top: 80px;
-  padding-left: 20px;
+
   padding-right: 300px;
   color: #e8a87c;
 }
@@ -54,7 +57,7 @@ h1 {
 }
 .container3 {
   color: #c38d9e;
-  padding-top: 10px;
+  padding-top: 50px;
   padding-left: 90px;
 }
 .day-1-emoji,
@@ -65,7 +68,8 @@ h1 {
   font-size: 20px;
   color: #41b3a3;
 }
-footer {
-  margin-top: 50px;
-  margin-left: 300px;
+span.temperature {
+  position: relative;
+  font-size: 16px;
+  top: -40;
 }
