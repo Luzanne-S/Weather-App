@@ -54,8 +54,12 @@ li {
   font-size: 60px;
   margin-top: 80px;
   margin-right: 100px;
-
   color: #e8a87c;
+}
+.units {
+  font-size: small;
+  position: relative;
+  bottom: 30px;
 }
 #icon {
   position: relative;
@@ -83,10 +87,3 @@ li {
 .card-title {
   font-size: 14px;
 }
-span.temperature {
-  position: relative;
-  font-size: 16px;
-  top: -40;
-}
-footer {
- 
