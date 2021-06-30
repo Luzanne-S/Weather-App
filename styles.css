@@ -61,6 +61,11 @@ li {
   position: relative;
   bottom: 30px;
 }
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+  color: #e8a87c;
+}
 #icon {
   position: relative;
   bottom: 110px;
