@@ -1,6 +1,6 @@
 //date//
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
+  let date = new Date(timestamp * 1000);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -22,6 +22,38 @@ function formatDate(timestamp) {
   let changeTime = document.querySelector(".date");
 
   return `${day} ${hours}:${minutes}`;
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+            <div class="day-1 text-center" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="forecast-day">${forecastDay.dt}</h5>
+                <p class="forecast-temperature">${Math.round(
+                  forecastDay.temp.max
+                )}°C</p>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="" width="42"/>
+              </div>
+            </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "4ad046b76be74520a0cad560d5d143a8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //city//
@@ -87,3 +119,6 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+getForecast(response.data.coord);
+search("Johannesburg");
