@@ -28,7 +28,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index > 5) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -121,4 +121,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 getForecast(response.data.coord);
-search("Johannesburg");
+searchCity("Johannesburg");
