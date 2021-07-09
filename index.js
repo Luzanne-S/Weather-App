@@ -57,18 +57,22 @@ function getForecast(coordinates) {
 }
 
 //city//
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
+function searchCity(city) {
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchInput.value}`;
+  h1.innerHTML = `${city}`;
   let apiKey = "4ad046b76be74520a0cad560d5d143a8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature).then(formatDate);
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-input");
+  searchCity(cityInputElement.value);
+}
+
 let cityInput = document.querySelector(".searchBar");
-cityInput.addEventListener("submit", searchCity);
+cityInput.addEventListener("submit", handleSubmit);
 
 //temperature//
 
@@ -96,6 +100,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElemement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 //converting units//
@@ -120,5 +125,4 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
-getForecast(response.data.coord);
 searchCity("Johannesburg");
