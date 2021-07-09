@@ -2,14 +2,15 @@ body {
   background-color: #85cdcb;
 }
 .card-wrapper {
+  padding-top: 70px;
   max-width: 600px;
   margin: auto;
 }
 .card {
   max-width: 600px;
   margin: auto;
-  height: 500px;
-  background: rgba(255, 255, 255, 0.7);
+  height: 400px;
+  background: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
@@ -91,4 +92,7 @@ li {
 }
 .card-title {
   font-size: 14px;
+}
+small {
+  margin-left: 550px;
 }
