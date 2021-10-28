@@ -43,13 +43,13 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 3) {
+    if (index < 4) {
       forecastHTML =
         forecastHTML +
         `
             <div class="day-1 text-center" style="max-width: 18rem">
               <div class="card-body">
-                <h5 class="forecast-day">${forecastDay.dt}</h5>
+                <h5 class="forecast-day">${formatDay(forecastDay.dt)}</h5>
                 <p class="forecast-temperature">${Math.round(
                   forecastDay.temp.max
                 )}°C</p>
