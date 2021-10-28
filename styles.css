@@ -9,7 +9,7 @@ body {
 .card {
   max-width: 600px;
   margin: auto;
-  height: 400px;
+  height: 500px;
   background: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -95,4 +95,10 @@ li {
 }
 small {
   margin-left: 550px;
+}
+a{
+  color:#c38d9e;
+}
+a:hover{
+  color: #e27d60;
 }
