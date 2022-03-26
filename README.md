@@ -7,4 +7,4 @@ I used the openweather app api and axios to retrieve data
 The live site is available at: https://festive-bhaskara-9dd89d.netlify.app/
 
 ###Screenshot
-![](images/Weather Screenshot.png)
+![](images/Weather.png)
